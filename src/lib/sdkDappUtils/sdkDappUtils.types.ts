@@ -1,1 +1,1 @@
-export type { FormatAmountPropsType as SdkDappFormatAmountType } from '@multiversx/sdk-dapp-utils/out/helpers/formatAmount';
+export type { FormatAmountPropsType as SdkDappFormatAmountType } from '@sravankumar02/sdk-dapp-utils/out/helpers/formatAmount';

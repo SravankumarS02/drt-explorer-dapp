@@ -10,7 +10,7 @@ export const emptyNetwork: NetworkType = {
   name: 'NOT CONFIGURED',
   adapter: NetworkAdapterEnum.api,
   theme: '',
-  egldLabel: '',
+  rewaLabel: '',
   walletAddress: '',
   explorerAddress: '',
   apiAddress: '',

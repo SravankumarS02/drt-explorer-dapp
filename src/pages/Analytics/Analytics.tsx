@@ -74,7 +74,7 @@ export const Analytics = () => {
 
   const newStuffCreatedChart = useMemo(() => {
     const charts = chartList?.filter(
-      (sc) => sc.id.includes('new-nfts') || sc.id.includes('new-esdts')
+      (sc) => sc.id.includes('new-nfts') || sc.id.includes('new-dcdts')
     );
     const smartContractChartCharts = chartList?.filter((sc) =>
       sc.id.includes('new-smart-contracts')

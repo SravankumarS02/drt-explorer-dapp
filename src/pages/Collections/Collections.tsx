@@ -51,13 +51,13 @@ export const Collections = () => {
 
   const getCollectionType = () => {
     if (activeRoute(collectionRoutes.collectionsNft)) {
-      return NftTypeEnum.NonFungibleESDT;
+      return NftTypeEnum.NonFungibleDCDT;
     }
     if (activeRoute(collectionRoutes.collectionsSft)) {
-      return NftTypeEnum.SemiFungibleESDT;
+      return NftTypeEnum.SemiFungibleDCDT;
     }
 
-    return [NftTypeEnum.NonFungibleESDT, NftTypeEnum.SemiFungibleESDT].join();
+    return [NftTypeEnum.NonFungibleDCDT, NftTypeEnum.SemiFungibleDCDT].join();
   };
 
   const fetchCollections = () => {

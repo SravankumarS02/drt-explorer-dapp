@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import { NATIVE_TOKEN_SEARCH_LABEL } from 'appConstants';
 import { TransactionsTable } from 'components';
-import { isEgldToken } from 'helpers';
+import { isRewaToken } from 'helpers';
 import { useAdapter, useFetchTransactions } from 'hooks';
 import { NativeTokenTabs } from 'layouts/NativeTokenLayout/NativeTokenTabs';
 import { activeNetworkSelector } from 'redux/selectors';
@@ -13,7 +13,7 @@ import { TransactionFiltersEnum } from 'types';
 export const NativeTokenTransactions = () => {
   const [searchParams] = useSearchParams();
   const { getTransfers, getTransfersCount } = useAdapter();
-  const { id: activeNetworkId, egldLabel } = useSelector(activeNetworkSelector);
+  const { id: activeNetworkId, rewaLabel } = useSelector(activeNetworkSelector);
 
   const {
     fetchTransactions,
@@ -25,7 +25,7 @@ export const NativeTokenTransactions = () => {
     dataPromise: getTransfers,
     dataCountPromise: getTransfersCount,
     filters: {
-      token: isEgldToken(egldLabel) ? NATIVE_TOKEN_SEARCH_LABEL : egldLabel
+      token: isRewaToken(rewaLabel) ? NATIVE_TOKEN_SEARCH_LABEL : rewaLabel
     }
   });
 
@@ -43,7 +43,7 @@ export const NativeTokenTransactions = () => {
         <div className='col-12'>
           <TransactionsTable
             transactions={transactions}
-            token={egldLabel}
+            token={rewaLabel}
             totalTransactions={totalTransactions}
             title={<NativeTokenTabs />}
             dataChanged={dataChanged}

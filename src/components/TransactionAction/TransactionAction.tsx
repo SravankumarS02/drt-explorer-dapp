@@ -36,7 +36,7 @@ export const ActionToken = ({
     Object.values(NftTypeEnum).includes(token.type as NftTypeEnum)
   ) {
     switch (token.type) {
-      case NftTypeEnum.SemiFungibleESDT:
+      case NftTypeEnum.SemiFungibleDCDT:
         return (
           <div>
             <NftBadge type={token.type} className='me-1' />
@@ -49,7 +49,7 @@ export const ActionToken = ({
             <TransactionActionBlock.Collection token={token} />
           </div>
         );
-      case NftTypeEnum.NonFungibleESDT:
+      case NftTypeEnum.NonFungibleDCDT:
         return (
           <div>
             <NftBadge type={token.type} className='me-1' />
@@ -62,7 +62,7 @@ export const ActionToken = ({
             <TransactionActionBlock.Collection token={token} />
           </div>
         );
-      case NftTypeEnum.MetaESDT:
+      case NftTypeEnum.MetaDCDT:
         return (
           <TransactionActionBlock.Nft
             token={token}
@@ -91,11 +91,11 @@ const ActionText = ({
   entry: any;
   transaction: TransactionType;
 }) => {
-  const { egldLabel = 'EGLD' } = useSelector(activeNetworkSelector);
+  const { rewaLabel = 'REWA' } = useSelector(activeNetworkSelector);
 
   switch (true) {
     case typeof entry === 'string':
-      return <span>{entry.replace('eGLD', egldLabel)}</span>;
+      return <span>{entry.replace('REWA', rewaLabel)}</span>;
 
     case Boolean(entry.address):
       let entryAssets;
@@ -171,10 +171,10 @@ const ActionText = ({
         </span>
       );
 
-    case Boolean(entry.egldValue):
+    case Boolean(entry.rewaValue):
       return (
         <span>
-          <FormatAmount value={entry.egldValue} showLastNonZeroDecimal />
+          <FormatAmount value={entry.rewaValue} showLastNonZeroDecimal />
         </span>
       );
 

@@ -10,7 +10,7 @@ import {
 
 enum TransactionMessagesEnum {
   newNFTData = 'new nft data on sender',
-  invalidLiquidity = 'invalid liquidity for esdt',
+  invalidLiquidity = 'invalid liquidity for dcdt',
   nilUserAccount = 'nil user account'
 }
 
@@ -39,7 +39,7 @@ const getDisplayMessages = ({
       }
       return 'Not enough balance of transferred token';
     case compareMessage?.includes(TransactionMessagesEnum.invalidLiquidity):
-      return 'One of the selected tokens was temporarily immovable due to a pending ESDT protocol upgrade. Protocol update has been successfully deployed at epoch 811.';
+      return 'One of the selected tokens was temporarily immovable due to a pending DCDT protocol upgrade. Protocol update has been successfully deployed at epoch 811.';
     case compareMessage?.includes(TransactionMessagesEnum.nilUserAccount):
       return 'Transfer role is active on token: Transaction sender or receiver is not whitelisted.';
     default:
@@ -74,9 +74,9 @@ const getReceiptValue = (transaction: TransactionType) => {
 
 const getTokenDisplayType = (type: TransactionTokenArgumentType['type']) => {
   switch (type) {
-    case NftTypeEnum.NonFungibleESDT:
+    case NftTypeEnum.NonFungibleDCDT:
       return 'NFT';
-    case NftTypeEnum.SemiFungibleESDT:
+    case NftTypeEnum.SemiFungibleDCDT:
       return 'SFT';
     default:
       return 'token';

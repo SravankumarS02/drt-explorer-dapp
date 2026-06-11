@@ -35,7 +35,7 @@ export const LowLiquidityTooltip = ({
       title={
         <>
           Less than {displayTresholdPercent}% of total Token Supply captured in
-          xExchange Liquidity Pools.
+          Dharitrix Liquidity Pools.
           {showTotalLiquidity && totalLiquidity && (
             <>
               (<FormatUSD value={totalLiquidity} usd={1} />)

@@ -30,7 +30,7 @@ export const Nfts = () => {
   const [totalNfts, setTotalNfts] = useState<number | '...'>('...');
 
   const fetchNfts = () => {
-    const type = 'SemiFungibleESDT,NonFungibleESDT';
+    const type = 'SemiFungibleDCDT,NonFungibleDCDT';
 
     Promise.all([
       getNfts({ search, page, size, type }),

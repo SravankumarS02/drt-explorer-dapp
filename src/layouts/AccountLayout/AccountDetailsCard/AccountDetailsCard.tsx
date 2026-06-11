@@ -81,7 +81,7 @@ export const AccountDetailsCard = () => {
         address,
         size: MAX_ACOUNT_TOKENS_BALANCE,
         fields: ['valueUsd', 'isLowLiquidity'].join(','),
-        includeMetaESDT: false
+        includeMetaDCDT: false
       }),
       getAccountTransfers({
         address,
@@ -89,8 +89,8 @@ export const AccountDetailsCard = () => {
         order: SortOrderEnum.asc,
         fields: 'timestamp'
       }),
-      getAccountTokensCount({ address, includeMetaESDT: true }),
-      getAccountNftsCount({ address, excludeMetaESDT: true })
+      getAccountTokensCount({ address, includeMetaDCDT: true }),
+      getAccountNftsCount({ address, excludeMetaDCDT: true })
     ]).then(
       ([
         accountTokensValueData,

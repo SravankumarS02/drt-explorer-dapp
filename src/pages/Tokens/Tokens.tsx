@@ -44,8 +44,8 @@ export const Tokens = () => {
 
   const fetchTokens = () => {
     Promise.all([
-      getTokens({ search, page, size, sort, order, includeMetaESDT: false }),
-      getTokensCount({ search, includeMetaESDT: false })
+      getTokens({ search, page, size, sort, order, includeMetaDCDT: false }),
+      getTokensCount({ search, includeMetaDCDT: false })
     ]).then(([tokensData, count]) => {
       if (tokensData.success) {
         setTokens(tokensData.data);
@@ -120,15 +120,15 @@ export const Tokens = () => {
                       </li>
                       <li className='list-inline-item me-0'>
                         <NetworkLink
-                          to={tokensRoutes.tokensMetaEsdt}
+                          to={tokensRoutes.tokensMetaDcdt}
                           className={`badge py-2 px-3 br-lg ${
-                            activeRoute(tokensRoutes.tokensMetaEsdt)
+                            activeRoute(tokensRoutes.tokensMetaDcdt)
                               ? 'badge-grey'
                               : 'badge-outline badge-outline-grey'
                           }`}
                           preventScrollReset={true}
                         >
-                          Meta-ESDT
+                          Meta-DCDT
                         </NetworkLink>
                       </li>
                     </menu>

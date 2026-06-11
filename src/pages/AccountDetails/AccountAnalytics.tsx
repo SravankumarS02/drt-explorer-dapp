@@ -27,12 +27,12 @@ export const AccountAnalytics = () => {
   const { account } = useSelector(accountSelector);
   const { address } = account;
   const [searchParams] = useSearchParams();
-  const { id: activeNetworkId, egldLabel } = useSelector(activeNetworkSelector);
+  const { id: activeNetworkId, rewaLabel } = useSelector(activeNetworkSelector);
   const { getAccountHistory, getToken } = useAdapter();
 
   const [dataReady, setDataReady] = useState<boolean | undefined>();
   const [tokenPrice, setTokenPrice] = useState<number | undefined>();
-  const [currency, setCurrency] = useState(egldLabel);
+  const [currency, setCurrency] = useState(rewaLabel);
   const [chartData, setChartData] = useState<ChartDataType[]>([]);
   const [startDate, setStartDate] = useState<string>(ELLIPSIS);
   const [endDate, setEndDate] = useState<string>(ELLIPSIS);
@@ -43,12 +43,12 @@ export const AccountAnalytics = () => {
   const size = stringIsInteger(urlSize) ? parseInt(urlSize) : 100;
 
   const showUsdValue =
-    !Boolean(token) || Boolean(token && tokenPrice && token !== egldLabel);
+    !Boolean(token) || Boolean(token && tokenPrice && token !== rewaLabel);
 
   const getChartData = async () => {
     setTokenPrice(undefined);
     let searchedToken = undefined;
-    if (token && token !== egldLabel) {
+    if (token && token !== rewaLabel) {
       const { success: searchedTokenSuccess, data: searchedTokenData } =
         await getToken(token);
 
@@ -68,7 +68,7 @@ export const AccountAnalytics = () => {
       await getAccountHistory({
         address,
         size: Number(size),
-        ...(token !== egldLabel ? { identifier: token } : {})
+        ...(token !== rewaLabel ? { identifier: token } : {})
       });
 
     if (accountsHistroySuccess && accountsHistoryData?.length > 0) {
@@ -86,7 +86,7 @@ export const AccountAnalytics = () => {
       const normalizedData = getNormalizedTimeEntries(reversedData, frequency);
 
       setCurrency(
-        searchedToken?.ticker ?? searchedToken?.identifier ?? egldLabel
+        searchedToken?.ticker ?? searchedToken?.identifier ?? rewaLabel
       );
       setChartData(normalizedData);
 
@@ -115,7 +115,7 @@ export const AccountAnalytics = () => {
 
   useEffect(() => {
     getChartData();
-  }, [activeNetworkId, searchParams, egldLabel]);
+  }, [activeNetworkId, searchParams, rewaLabel]);
 
   return (
     <div className='card'>

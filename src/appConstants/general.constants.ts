@@ -1,4 +1,4 @@
-export const BRAND_NAME = import.meta.env.VITE_APP_BRAND_NAME ?? 'MultiversX';
+export const BRAND_NAME = import.meta.env.VITE_APP_BRAND_NAME ?? 'DharitrI';
 
 export const METACHAIN_SHARD_ID = 4294967295;
 export const MAIN_SHARD_ID = 4294967293;
@@ -26,10 +26,10 @@ export const AUCTION_LIST_MAX_NODES = 3000;
 export const AUCTION_LIST_QUALIFIED_MIN_DISPLAY_ROW_COUNT = 10;
 export const AUCTION_LIST_MIN_DISPLAY_ROW_COUNT = 6;
 
-export const NATIVE_TOKEN_SEARCH_LABEL = 'EGLD';
-export const NATIVE_TOKEN_IDENTIFIER = 'EGLD-000000';
-export const LEGACY_DELEGATION_NODES_IDENTITY = 'multiversx';
-export const HEROTAG_SUFFIX = '.elrond';
+export const NATIVE_TOKEN_SEARCH_LABEL = 'REWA';
+export const NATIVE_TOKEN_IDENTIFIER = 'REWA-000000';
+export const LEGACY_DELEGATION_NODES_IDENTITY = 'dharitri';
+export const HEROTAG_SUFFIX = '.numbat';
 export const TEMP_LOCAL_NOTIFICATION_DISMISSED = 'barnardGovernance';
 export const CUSTOM_NETWORK_ID = 'custom-network';
 export const NEW_VERSION_NOTIFICATION = 'newExplorerVersion';
@@ -44,18 +44,18 @@ export const PLACEHOLDER_IMAGE_PATH = 'assets/img/default.png';
 export const SVG_PLACEHOLDER_IMAGE_PATH = 'assets/img/default.svg';
 export const SVG_ICON_PLACEHOLDER_IMAGE_PATH = 'assets/img/default-icon.svg';
 
-export const DEFAULT_HRP = 'erd';
+export const DEFAULT_HRP = 'drt';
 
 // Sovereign Chains - subject to change
 export const SOVEREIGN_BRIDGE_ADDRESSES = [
-  'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'
+  'drt1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls6prdez'
 ];
 export const MAIN_CHAIN_SHARD_IDS = [MAIN_SHARD_ID];
 
 export const DEFAULT_PROVIDER_COLORS: {
   [index: string]: string;
 } = {
-  multiversx: '#23f7dd',
+  dharitri: '#23f7dd',
   binance_staking: '#f2b92e',
   justminingfr: '#f99a28',
   validblocks: '#5e20e5',

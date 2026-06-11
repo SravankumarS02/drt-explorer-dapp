@@ -45,11 +45,11 @@ export const AccountTokensTableHeader = ({
           <li className='list-inline-item me-0'>
             <button
               type='button'
-              onClick={updateTokenType(TokenTypeEnum.FungibleESDT)}
+              onClick={updateTokenType(TokenTypeEnum.FungibleDCDT)}
               className={classNames(
                 'badge badge-outline badge-outline-grey py-2 px-3 br-lg',
                 {
-                  active: type === TokenTypeEnum.FungibleESDT
+                  active: type === TokenTypeEnum.FungibleDCDT
                 }
               )}
             >
@@ -59,15 +59,15 @@ export const AccountTokensTableHeader = ({
           <li className='list-inline-item me-0'>
             <button
               type='button'
-              onClick={updateTokenType(TokenTypeEnum.MetaESDT)}
+              onClick={updateTokenType(TokenTypeEnum.MetaDCDT)}
               className={classNames(
                 'badge badge-outline badge-outline-grey py-2 px-3 br-lg',
                 {
-                  active: type === TokenTypeEnum.MetaESDT
+                  active: type === TokenTypeEnum.MetaDCDT
                 }
               )}
             >
-              Meta-ESDT
+              Meta-DCDT
             </button>
           </li>
         </menu>

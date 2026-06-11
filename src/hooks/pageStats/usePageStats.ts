@@ -55,7 +55,7 @@ export const usePageStats = () => {
         category === 'blocks' &&
         (id === 'totalDeveloperRewards' || id === 'totalNetworkFees')
       ) {
-        return 'EGLD';
+        return 'REWA';
       }
 
       if (category === 'tokens' && id === 'ecosystemMarketCap') {
@@ -158,7 +158,7 @@ export const usePageStats = () => {
 
       case activeRoute(tokensRoutes.tokens):
       case activeRoute(tokensRoutes.tokensMeta):
-      case activeRoute(tokensRoutes.tokensMetaEsdt):
+      case activeRoute(tokensRoutes.tokensMetaDcdt):
         return {
           title: headersTokensTitle,
           data: headersTokensData

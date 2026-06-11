@@ -10,7 +10,7 @@ export const getInitialNftState = (): NftSliceType => {
       timestamp: 0,
       attributes: '',
       nonce: 0,
-      type: NftTypeEnum.NonFungibleESDT,
+      type: NftTypeEnum.NonFungibleDCDT,
       name: '',
       creator: '',
       royalties: 0,

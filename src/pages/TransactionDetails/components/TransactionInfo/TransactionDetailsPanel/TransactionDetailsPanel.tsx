@@ -40,7 +40,7 @@ export const TransactionDetailsPanel = ({
 }: {
   transaction: TransactionType;
 }) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { receiver } = getDisplayReceiver(transaction);
 
   const txValue = formatAmount({
@@ -188,7 +188,7 @@ export const TransactionDetailsPanel = ({
       </DetailItem>
 
       {transaction.price !== undefined && (
-        <DetailItem title={`${egldLabel} Price`}>
+        <DetailItem title={`${rewaLabel} Price`}>
           <FormatUSD
             value={1}
             usd={transaction.price}

@@ -28,7 +28,7 @@ export const TransactionPreviewCards = ({
 }: {
   transaction: TransactionType;
 }) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { receiver } = getDisplayReceiver(transaction);
   const txValue = formatAmount({
     input: transaction.value,
@@ -123,7 +123,7 @@ export const TransactionPreviewCards = ({
                       )}
                       {transaction.price !== undefined && (
                         <p className='mb-0 mt-1'>
-                          {egldLabel} Price:{' '}
+                          {rewaLabel} Price:{' '}
                           <FormatUSD
                             value={1}
                             usd={transaction.price}

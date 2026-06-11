@@ -1,4 +1,4 @@
-import { multiversxApps, SHARE_PREFIX } from 'config';
+import { dharitriApps, SHARE_PREFIX } from 'config';
 import { capitalize } from 'helpers';
 
 export const EcosystemMenu = () => {
@@ -10,7 +10,7 @@ export const EcosystemMenu = () => {
       role='menu'
       aria-labelledby='ecosystem-menu-button'
     >
-      {multiversxApps.map((menuEntry) => {
+      {dharitriApps.map((menuEntry) => {
         return (
           <li key={menuEntry.id} role='presentation'>
             {menuEntry.id === 'explorer' ? (

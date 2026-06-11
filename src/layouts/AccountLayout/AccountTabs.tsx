@@ -20,7 +20,7 @@ export const AccountTabs = () => {
       activationRoutes: [accountsRoutes.accountDetails]
     },
     {
-      tabLabel: 'ESDT Tokens',
+      tabLabel: 'DCDT Tokens',
       tabTo: urlBuilder.accountDetailsTokens(address),
       activationRoutes: [accountsRoutes.accountTokens],
       show: tokensRouteActive

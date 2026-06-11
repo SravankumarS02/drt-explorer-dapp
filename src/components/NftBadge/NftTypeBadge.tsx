@@ -12,16 +12,16 @@ export const NftTypeBadge = ({
 }) => {
   switch (type) {
     // default NFT types
-    case NftTypeEnum.SemiFungibleESDT:
-    case NftTypeEnum.NonFungibleESDT:
-    case NftTypeEnum.MetaESDT:
+    case NftTypeEnum.SemiFungibleDCDT:
+    case NftTypeEnum.NonFungibleDCDT:
+    case NftTypeEnum.MetaDCDT:
       return (
         <div
           className={classNames(
             'badge badge-outline',
-            { 'badge-outline-orange': type === NftTypeEnum.SemiFungibleESDT },
-            { 'badge-outline-yellow': type === NftTypeEnum.NonFungibleESDT },
-            { 'badge-outline-green': type === NftTypeEnum.MetaESDT },
+            { 'badge-outline-orange': type === NftTypeEnum.SemiFungibleDCDT },
+            { 'badge-outline-yellow': type === NftTypeEnum.NonFungibleDCDT },
+            { 'badge-outline-green': type === NftTypeEnum.MetaDCDT },
             className
           )}
         >

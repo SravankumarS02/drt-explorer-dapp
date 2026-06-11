@@ -42,7 +42,7 @@ export const AccountTokensTable = () => {
   const fetchAccountTokens = async () => {
     const { data, success } = await getAccountTokens({
       address,
-      includeMetaESDT: true,
+      includeMetaDCDT: true,
       size: MAX_RESULTS,
       fields: ACCOUNT_TOKENS_FIELDS.join(',')
     });

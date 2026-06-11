@@ -21,11 +21,11 @@ import {
 const internalTransactionActions = [
   TransactionOperationActionEnum.create,
   TransactionOperationActionEnum.localMint,
-  TransactionOperationActionEnum.ESDTLocalMint,
+  TransactionOperationActionEnum.DCDTLocalMint,
   TransactionOperationActionEnum.addQuantity,
   TransactionOperationActionEnum.burn,
   TransactionOperationActionEnum.localBurn,
-  TransactionOperationActionEnum.ESDTLocalBurn,
+  TransactionOperationActionEnum.DCDTLocalBurn,
   TransactionOperationActionEnum.wipe,
   TransactionOperationActionEnum.writeLog,
   TransactionOperationActionEnum.signalError
@@ -48,7 +48,7 @@ const OperationToken = ({
   operation: TransactionOperationType;
 }) => {
   const token = {
-    type: operation.esdtType,
+    type: operation.dcdtType,
     name: operation.name,
     ticker: operation.svgUrl
       ? getTicker(operation.identifier)
@@ -64,7 +64,7 @@ const OperationToken = ({
   switch (operation.type) {
     case 'nft':
       return <TransactionActionBlock.Nft token={token} />;
-    case 'esdt':
+    case 'dcdt':
       return <TransactionActionBlock.Token token={token} />;
     default:
       return <></>;
@@ -162,7 +162,7 @@ const OperationText = ({
   switch (operation.action) {
     case TransactionOperationActionEnum.create:
     case TransactionOperationActionEnum.localMint:
-    case TransactionOperationActionEnum.ESDTLocalMint:
+    case TransactionOperationActionEnum.DCDTLocalMint:
       return (
         <OperationBlock
           transaction={transaction}
@@ -186,7 +186,7 @@ const OperationText = ({
       );
     case TransactionOperationActionEnum.burn:
     case TransactionOperationActionEnum.localBurn:
-    case TransactionOperationActionEnum.ESDTLocalBurn:
+    case TransactionOperationActionEnum.DCDTLocalBurn:
       return (
         <OperationBlock
           transaction={transaction}
@@ -301,16 +301,16 @@ const OperationRow = ({
 }) => {
   switch (operation.type) {
     case TransactionVisibleOperationEnum.nft:
-    case TransactionVisibleOperationEnum.esdt:
+    case TransactionVisibleOperationEnum.dcdt:
       return (
         <DetailedItem operation={operation} transaction={transaction}>
           <>
-            {operation.esdtType === 'NonFungibleESDT' && (
+            {operation.dcdtType === 'NonFungibleDCDT' && (
               <div className='me-1 badge badge-outline badge-outline-yellow'>
                 NFT
               </div>
             )}
-            {operation.esdtType === 'SemiFungibleESDT' && (
+            {operation.dcdtType === 'SemiFungibleDCDT' && (
               <div className='me-1 badge badge-outline badge-outline-orange'>
                 SFT
               </div>
@@ -320,7 +320,7 @@ const OperationRow = ({
         </DetailedItem>
       );
 
-    case TransactionVisibleOperationEnum.egld:
+    case TransactionVisibleOperationEnum.rewa:
       return (
         <DetailedItem operation={operation} transaction={transaction}>
           <div className='d-flex align-items-center symbol text-truncate text-neutral-100'>

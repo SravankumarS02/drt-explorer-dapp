@@ -24,7 +24,7 @@ export const getTransactionMethod = (transaction: UITransactionType) => {
     }
 
     if (
-      transaction.action.category === TransactionActionCategoryEnum.esdtNft &&
+      transaction.action.category === TransactionActionCategoryEnum.dcdtNft &&
       transaction.action.name === TransactionActionEnum.transfer
     ) {
       return transactionAction;

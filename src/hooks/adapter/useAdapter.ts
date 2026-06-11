@@ -50,7 +50,7 @@ export const useAdapter = () => {
     /* Growth / Analytics */
     ...analyticsRequests,
 
-    /* Extra Requests: xExchange, etc */
+    /* Extra Requests: Dharitrix, etc */
     ...extraRequests
   };
 };

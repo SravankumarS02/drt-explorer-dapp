@@ -13,7 +13,7 @@ export const NftTabs = () => {
 
   const showOverview = Boolean(
     type &&
-      type !== NftTypeEnum.MetaESDT &&
+      type !== NftTypeEnum.MetaDCDT &&
       (metadata?.attributes || (rarities && Object.keys(rarities).length > 0))
   );
 
@@ -25,7 +25,7 @@ export const NftTabs = () => {
       activationRoutes: [nftRoutes.nftDetails]
     },
     {
-      show: type && (type !== NftTypeEnum.MetaESDT || isNftProof),
+      show: type && (type !== NftTypeEnum.MetaDCDT || isNftProof),
       tabTo: isNftProof
         ? urlBuilder.proofDetails(identifier)
         : urlBuilder.nftDetailsTransactions(identifier),
@@ -36,7 +36,7 @@ export const NftTabs = () => {
       ]
     },
     {
-      show: type && (type === NftTypeEnum.SemiFungibleESDT || isNftProof),
+      show: type && (type === NftTypeEnum.SemiFungibleDCDT || isNftProof),
       tabTo: isNftProof
         ? urlBuilder.proofDetailsAccounts(identifier)
         : urlBuilder.nftDetailsAccounts(identifier),

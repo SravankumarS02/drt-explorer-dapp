@@ -25,7 +25,7 @@ export const useGetShardText = () => {
     const isMainShard = MAIN_SHARD_ID.toString() === String(shard).toString();
 
     if (isMainShard) {
-      return 'MultiversX';
+      return 'DharitrI';
     }
     if (isShardMetachain) {
       if (isSovereign) {

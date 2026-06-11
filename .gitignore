@@ -44,15 +44,15 @@ dist-ssr
 # Config
 /public/config.js
 /src/config/*
-!/src/config/helpers
-!/src/config.devnet.ts
-!/src/config.placeholder.ts
-!/src/config.devnet-old.ts
-!/src/config.testnet.ts
-!/src/config.mainnet.ts
-!/src/config.multiple.ts
-/src/interceptors/*
-!/src/interceptors/Interceptor.tsx
+!/src/config/config/helpers
+!/src/config/config.devnet.ts
+!/src/config/config.placeholder.ts
+!/src/config/config.devnet-old.ts
+!/src/config/config.testnet.ts
+!/src/config/config.mainnet.ts
+!/src/config/config.multiple.ts
+/src/config/interceptors/*
+!/src/config/interceptors/Interceptor.tsx
 
 # Other
 /sam/*

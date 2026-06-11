@@ -21,7 +21,7 @@ export const defaultAction = (action: TransactionActionType) => {
   return [];
 };
 
-export const mexUnwrapper = (
+export const moaUnwrapper = (
   action: TransactionActionType
 ): Array<string | TransactionUnwrapperType> => {
   switch (action?.arguments?.functionName) {
@@ -143,7 +143,7 @@ export const tooltipUnwrapper = (
   return defaultAction(action);
 };
 
-export const esdtNftUnwrapper = (
+export const dcdtNftUnwrapper = (
   action: TransactionActionType
 ): Array<string | TransactionUnwrapperType> => {
   switch (action.name) {
@@ -168,7 +168,7 @@ export const stakeUnwrapper = (
     case TransactionActionEnum.stake:
       return [
         'Delegate',
-        { egldValue: action.arguments?.value },
+        { rewaValue: action.arguments?.value },
         'to staking provider',
         {
           providerName: action.arguments?.providerName,
@@ -178,7 +178,7 @@ export const stakeUnwrapper = (
     case TransactionActionEnum.unDelegate:
       return [
         'Undelegate',
-        { egldValue: action.arguments?.value },
+        { rewaValue: action.arguments?.value },
         'from staking provider',
         {
           providerName: action.arguments?.providerName,
@@ -228,10 +228,10 @@ export const unwrapper = (
 
   if (action.arguments) {
     switch (action.category) {
-      case TransactionActionCategoryEnum.esdtNft:
-        return esdtNftUnwrapper(action);
-      case TransactionActionCategoryEnum.mex:
-        return mexUnwrapper(action);
+      case TransactionActionCategoryEnum.dcdtNft:
+        return dcdtNftUnwrapper(action);
+      case TransactionActionCategoryEnum.moa:
+        return moaUnwrapper(action);
       case TransactionActionCategoryEnum.stake:
         return stakeUnwrapper(action);
       default:

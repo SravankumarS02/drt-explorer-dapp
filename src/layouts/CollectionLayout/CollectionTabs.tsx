@@ -10,34 +10,34 @@ export const CollectionTabs = () => {
   const { collectionState } = useSelector(collectionSelector);
   const { collection, roles, type } = collectionState;
 
-  const isMetaESDT = type && type === NftTypeEnum.MetaESDT;
+  const isMetaDCDT = type && type === NftTypeEnum.MetaDCDT;
 
   const tabs = [
     {
-      show: !isMetaESDT,
+      show: !isMetaDCDT,
       tabTo: urlBuilder.collectionDetails(collection),
       tabLabel: `${getNftText(type)}s`,
       activationRoutes: [collectionRoutes.collectionDetails]
     },
     {
-      tabTo: isMetaESDT
-        ? urlBuilder.tokenMetaEsdtDetails(collection)
+      tabTo: isMetaDCDT
+        ? urlBuilder.tokenMetaDcdtDetails(collection)
         : urlBuilder.collectionDetailsTransactions(collection),
       tabLabel: 'Transactions',
       activationRoutes: [
         collectionRoutes.collectionDetailsTransactions,
-        tokensRoutes.tokensMetaEsdtDetails
+        tokensRoutes.tokensMetaDcdtDetails
       ]
     },
     {
       show: Boolean(roles),
-      tabTo: isMetaESDT
-        ? urlBuilder.tokenMetaEsdtDetailsRoles(collection)
+      tabTo: isMetaDCDT
+        ? urlBuilder.tokenMetaDcdtDetailsRoles(collection)
         : urlBuilder.collectionDetailsRoles(collection),
       tabLabel: 'Roles',
       activationRoutes: [
         collectionRoutes.collectionDetailsRoles,
-        tokensRoutes.tokensMetaEsdtDetailsRoles
+        tokensRoutes.tokensMetaDcdtDetailsRoles
       ]
     }
   ];

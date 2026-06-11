@@ -145,10 +145,10 @@ export const CustomNetworkDetails = ({ className }: WithClassnameType) => {
                 }
               />
             )}
-            {existingCustomNetwork.egldLabel && (
+            {existingCustomNetwork.rewaLabel && (
               <NetworkDetail
                 title='Default Token Label'
-                description={existingCustomNetwork.egldLabel}
+                description={existingCustomNetwork.rewaLabel}
               />
             )}
             {existingCustomNetwork.hrp !== DEFAULT_HRP && (

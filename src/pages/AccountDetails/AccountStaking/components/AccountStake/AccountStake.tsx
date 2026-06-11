@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-import MultiversXSymbol from 'assets/img/multiversx-legacy-delegation.svg';
+import DharitrISymbol from 'assets/img/dharitri-legacy-delegation.svg';
 import { FormatAmount } from 'components';
 import { AccountStakeType } from 'types';
 
@@ -19,8 +19,8 @@ export const AccountStake = ({ stake }: { stake: AccountStakeType }) => {
     <div className='delegation-row d-flex flex-wrap align-items-center justify-content-between p-3 px-md-4'>
       <div className='provider-details'>
         <div className='d-flex flex-row align-items-center'>
-          <div className='multiversx-icon provider-image has-avatar rounded-circle d-flex me-3'>
-            <MultiversXSymbol />
+          <div className='dharitri-icon provider-image has-avatar rounded-circle d-flex me-3'>
+            <DharitrISymbol />
           </div>
           <div className='d-flex flex-column w-100'>
             <div className='provider-title font-headings d-flex align-items-center'>

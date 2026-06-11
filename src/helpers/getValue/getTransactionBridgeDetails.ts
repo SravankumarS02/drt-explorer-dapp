@@ -15,7 +15,7 @@ export const getTransactionBridgeDetails = (
     if (
       SOVEREIGN_BRIDGE_ADDRESSES.includes(transaction.sender) &&
       MAIN_CHAIN_SHARD_IDS.includes(transaction.senderShard) &&
-      transaction.function === 'MultiESDTNFTTransfer'
+      transaction.function === 'MultiDCDTNFTTransfer'
     ) {
       return { text: 'Receive', icon: faLinkHorizontal };
     }

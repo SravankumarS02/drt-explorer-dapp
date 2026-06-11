@@ -140,7 +140,7 @@ export enum TransactionFiltersEnum {
 
 // Avoid issues with differences between methods and actions
 export enum TransactionMethodsEnum {
-  // esdtNft category
+  // dcdtNft category
   transfer = 'transfer',
   // stake category
   delegate = 'delegate',
@@ -169,8 +169,8 @@ export enum TransactionMethodsEnum {
   claimRewardsProxy = 'claimRewardsProxy',
   compoundRewards = 'compoundRewards',
   compoundRewardsProxy = 'compoundRewardsProxy',
-  wrapEgld = 'wrapEgld',
-  unwrapEgld = 'unwrapEgld',
+  wrapRewa = 'wrapRewa',
+  unwrapRewa = 'unwrapRewa',
   lockAssets = 'lockAssets',
   unlockAssets = 'unlockAssets',
   mergeLockedAssetTokens = 'mergeLockedAssetTokens',
@@ -190,31 +190,31 @@ export enum TransactionMethodsEnum {
   ChangeOwnerAddress = 'ChangeOwnerAddress',
   SetUserName = 'SetUserName',
   SaveKeyValue = 'SaveKeyValue',
-  ESDTTransfer = 'ESDTTransfer',
-  ESDTBurn = 'ESDTBurn',
-  ESDTFreeze = 'ESDTFreeze',
-  ESDTUnFreeze = 'ESDTUnFreeze',
-  ESDTWipe = 'ESDTWipe',
-  ESDTPause = 'ESDTPause',
-  ESDTUnPause = 'ESDTUnPause',
-  ESDTSetRole = 'ESDTSetRole',
-  ESDTUnSetRole = 'ESDTUnSetRole',
-  ESDTSetLimitedTransfer = 'ESDTSetLimitedTransfer',
-  ESDTUnSetLimitedTransfer = 'ESDTUnSetLimitedTransfer',
-  ESDTLocalBurn = 'ESDTLocalBurn',
-  ESDTLocalMint = 'ESDTLocalMint',
-  ESDTNFTTransfer = 'ESDTNFTTransfer',
-  ESDTNFTCreate = 'ESDTNFTCreate',
-  ESDTNFTAddQuantity = 'ESDTNFTAddQuantity',
-  ESDTNFTBurn = 'ESDTNFTBurn',
-  ESDTNFTAddURI = 'ESDTNFTAddURI',
-  ESDTNFTUpdateAttributes = 'ESDTNFTUpdateAttributes',
-  MultiESDTNFTTransfer = 'MultiESDTNFTTransfer',
+  DCDTTransfer = 'DCDTTransfer',
+  DCDTBurn = 'DCDTBurn',
+  DCDTFreeze = 'DCDTFreeze',
+  DCDTUnFreeze = 'DCDTUnFreeze',
+  DCDTWipe = 'DCDTWipe',
+  DCDTPause = 'DCDTPause',
+  DCDTUnPause = 'DCDTUnPause',
+  DCDTSetRole = 'DCDTSetRole',
+  DCDTUnSetRole = 'DCDTUnSetRole',
+  DCDTSetLimitedTransfer = 'DCDTSetLimitedTransfer',
+  DCDTUnSetLimitedTransfer = 'DCDTUnSetLimitedTransfer',
+  DCDTLocalBurn = 'DCDTLocalBurn',
+  DCDTLocalMint = 'DCDTLocalMint',
+  DCDTNFTTransfer = 'DCDTNFTTransfer',
+  DCDTNFTCreate = 'DCDTNFTCreate',
+  DCDTNFTAddQuantity = 'DCDTNFTAddQuantity',
+  DCDTNFTBurn = 'DCDTNFTBurn',
+  DCDTNFTAddURI = 'DCDTNFTAddURI',
+  DCDTNFTUpdateAttributes = 'DCDTNFTUpdateAttributes',
+  MultiDCDTNFTTransfer = 'MultiDCDTNFTTransfer',
   // guardian
   SetGuardian = 'SetGuardian',
   GuardAccount = 'GuardAccount',
   UnGuardAccount = 'UnGuardAccount',
-  // xportal
+  // tdharitri
   claim = 'claim',
   openMysteryBox = 'openMysteryBox'
 }
@@ -238,7 +238,7 @@ export interface TransactionReceiptType {
 }
 
 export interface TransactionTokensType {
-  esdts: string[];
+  dcdts: string[];
   nfts: string[];
 }
 
@@ -375,7 +375,7 @@ export interface TransactionUnwrapperType {
   tokenNoValue?: TransactionTokenArgumentType[];
   tokenNoLink?: TransactionTokenArgumentType[];
   address?: string;
-  egldValue?: string;
+  rewaValue?: string;
   value?: string;
   providerName?: string;
   providerAvatar?: string;
@@ -386,7 +386,7 @@ export interface TransactionUnwrapperType {
 }
 
 export enum TransactionActionEnum {
-  // esdtNft category
+  // dcdtNft category
   transfer = 'transfer',
   // stake category
   delegate = 'delegate',
@@ -395,7 +395,7 @@ export enum TransactionActionEnum {
   stakeClaimRewards = 'claimRewards',
   reDelegateRewards = 'reDelegateRewards',
   withdraw = 'withdraw',
-  // mex category
+  // moa category
   claimLockedAssets = 'claimLockedAssets',
   swapTokensFixedInput = 'swapTokensFixedInput',
   swapTokensFixedOutput = 'swapTokensFixedOutput',
@@ -415,8 +415,8 @@ export enum TransactionActionEnum {
   claimRewardsProxy = 'claimRewardsProxy',
   compoundRewards = 'compoundRewards',
   compoundRewardsProxy = 'compoundRewardsProxy',
-  wrapEgld = 'wrapEgld',
-  unwrapEgld = 'unwrapEgld',
+  wrapRewa = 'wrapRewa',
+  unwrapRewa = 'unwrapRewa',
   lockAssets = 'lockAssets',
   unlockAssets = 'unlockAssets',
   mergeLockedAssetTokens = 'mergeLockedAssetTokens',
@@ -434,8 +434,8 @@ export enum TransactionActionEnum {
 }
 
 export enum TransactionActionCategoryEnum {
-  esdtNft = 'esdtNft',
-  mex = 'mex',
+  dcdtNft = 'dcdtNft',
+  moa = 'moa',
   stake = 'stake',
   scCall = 'scCall',
   deprecatedRelayedV1V2 = 'deprecatedRelayedV1V2'
@@ -446,7 +446,7 @@ export enum TransactionActionCategoryEnum {
 export interface TransactionOperationType {
   action: TransactionOperationActionEnum;
   type: TransactionVisibleOperationEnum | TransactionHiddenOperationEnum;
-  esdtType: NftTypeEnum | TokenTypeEnum;
+  dcdtType: NftTypeEnum | TokenTypeEnum;
   collection?: string;
   name: string;
   identifier: string;
@@ -505,14 +505,14 @@ export enum TransactionOperationActionEnum {
   innerTransaction = 'innerTransaction',
 
   // to be deprecated ?
-  ESDTLocalMint = 'ESDTLocalMint',
-  ESDTLocalBurn = 'ESDTLocalBurn'
+  DCDTLocalMint = 'DCDTLocalMint',
+  DCDTLocalBurn = 'DCDTLocalBurn'
 }
 
 export enum TransactionVisibleOperationEnum {
   nft = 'nft',
-  esdt = 'esdt',
-  egld = 'egld'
+  dcdt = 'dcdt',
+  rewa = 'rewa'
 }
 export enum TransactionHiddenOperationEnum {
   none = 'none',

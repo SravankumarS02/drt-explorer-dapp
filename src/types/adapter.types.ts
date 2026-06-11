@@ -79,7 +79,7 @@ export interface GetTokensType extends SortableApiType {
   name?: string;
   identifier?: string;
   identifiers?: string;
-  includeMetaESDT?: boolean;
+  includeMetaDCDT?: boolean;
   withUsername?: boolean;
 }
 
@@ -96,7 +96,7 @@ export interface GetNftsType extends SortableApiType {
   withOwner?: boolean;
   withSupply?: boolean;
   withScamInfo?: boolean;
-  excludeMetaESDT?: boolean;
+  excludeMetaDCDT?: boolean;
   source?: string;
 }
 
@@ -106,7 +106,7 @@ export interface GetCollectionsType extends SortableApiType {
   type?: string;
   before?: string;
   after?: string;
-  excludeMetaESDT?: boolean;
+  excludeMetaDCDT?: boolean;
   withOwner?: boolean;
 }
 
@@ -240,7 +240,7 @@ export interface AdapterProviderPropsType {
     withUsername?: boolean;
     withBlockInfo?: boolean;
     isRelayed?: boolean;
-    includeMetaESDT?: boolean;
+    includeMetaDCDT?: boolean;
     withGuardianInfo?: boolean;
     isSmartContract?: boolean;
     withOwnerAssets?: boolean;

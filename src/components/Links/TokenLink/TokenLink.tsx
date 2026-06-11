@@ -6,40 +6,40 @@ import {
   NATIVE_TOKEN_SEARCH_LABEL
 } from 'appConstants';
 import { NativeTokenSymbol, NetworkLink, Overlay } from 'components';
-import { urlBuilder, isEgldToken, isProof } from 'helpers';
+import { urlBuilder, isRewaToken, isProof } from 'helpers';
 import { activeNetworkSelector } from 'redux/selectors';
 import { TokenType, TokenTypeEnum } from 'types';
 
 export const TokenLink = ({ token }: { token: TokenType }) => {
   const isNftProof = isProof(token);
 
-  const { egldLabel = '' } = useSelector(activeNetworkSelector);
+  const { rewaLabel = '' } = useSelector(activeNetworkSelector);
 
   const identifierArray = token.identifier ? token.identifier.split('-') : [];
-  if (identifierArray.length > 2 && token.type === TokenTypeEnum.MetaESDT) {
+  if (identifierArray.length > 2 && token.type === TokenTypeEnum.MetaDCDT) {
     identifierArray.pop();
   }
   const detailsIdentifier = identifierArray.join('-');
 
   const metaDetails = isNftProof
     ? urlBuilder.proofDetails(token.identifier)
-    : urlBuilder.tokenMetaEsdtDetails(detailsIdentifier);
+    : urlBuilder.tokenMetaDcdtDetails(detailsIdentifier);
 
   const networkLink =
-    token.type === TokenTypeEnum.MetaESDT
+    token.type === TokenTypeEnum.MetaDCDT
       ? metaDetails
       : urlBuilder.tokenDetails(token.identifier);
 
   if (token.identifier === NATIVE_TOKEN_IDENTIFIER) {
-    const isEgldNetworkToken = isEgldToken(egldLabel);
+    const isRewaNetworkToken = isRewaToken(rewaLabel);
 
-    if (isEgldNetworkToken) {
-      const defaultCoinLink = `/${egldLabel.toLowerCase()}`;
+    if (isRewaNetworkToken) {
+      const defaultCoinLink = `/${rewaLabel.toLowerCase()}`;
       return (
         <NetworkLink to={defaultCoinLink} className='d-flex text-truncate'>
           <span className='fam'></span>
           <NativeTokenSymbol
-            className={classNames('sym', { custom: !isEgldNetworkToken })}
+            className={classNames('sym', { custom: !isRewaNetworkToken })}
           />
           <sup className='suf opc'></sup>
         </NetworkLink>
@@ -76,7 +76,7 @@ export const TokenLink = ({ token }: { token: TokenType }) => {
       <div className='d-flex align-items-center symbol text-truncate'>
         {token?.assets ? (
           <>
-            {token.type === TokenTypeEnum.MetaESDT &&
+            {token.type === TokenTypeEnum.MetaDCDT &&
             detailsIdentifier !== token.identifier ? (
               <Overlay title={token.identifier} truncate>
                 <TokenComponent />

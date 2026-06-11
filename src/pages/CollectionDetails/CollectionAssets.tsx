@@ -15,7 +15,7 @@ export const CollectionAssets = () => {
     <>
       {collection ? (
         <>
-          {type === NftTypeEnum.MetaESDT ? (
+          {type === NftTypeEnum.MetaDCDT ? (
             <CollectionRoles />
           ) : (
             <CollectionNfts />

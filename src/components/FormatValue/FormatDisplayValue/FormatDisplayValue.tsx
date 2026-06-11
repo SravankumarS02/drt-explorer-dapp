@@ -26,7 +26,7 @@ export const FormatDisplayValue = (props: FormatDisplayValueUIType) => {
     token,
     symbol,
     label,
-    egldLabel,
+    rewaLabel,
     details,
     digits = DIGITS,
     showLastNonZeroDecimal,
@@ -46,7 +46,7 @@ export const FormatDisplayValue = (props: FormatDisplayValueUIType) => {
 
   const valueParts = String(formattedValue).split('.');
   const isZero = Number(completeValue) === 0;
-  const displayLabel = label ?? token ?? egldLabel;
+  const displayLabel = label ?? token ?? rewaLabel;
   const canAnimate = isAnimated && !isNaN(Number(completeValue));
 
   const DisplayValue = () => {

@@ -51,7 +51,7 @@ export const FormatNumber = (props: FormatNumberUIType) => {
       formattedValue={formattedValue}
       completeValue={isAnimated ? bNamount.toNumber() : completeValue}
       symbol={symbol}
-      egldLabel={label}
+      rewaLabel={label}
       hideLessThanOne={hideLessThanOne && bNamount.isLessThan(1)}
       showSymbol={Boolean(symbol)}
       showLabel={Boolean(label)}

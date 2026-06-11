@@ -33,7 +33,7 @@ export const TokenHolderDetailsCard = () => {
     const { data, success } = await getAccountTokens({
       address,
       identifier,
-      includeMetaESDT: true,
+      includeMetaDCDT: true,
       fields: ['balance', 'valueUsd'].join(',')
     });
     if (success && data && data.length <= 1) {

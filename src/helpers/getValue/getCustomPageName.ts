@@ -21,8 +21,8 @@ export const getCustomPageName = ({
     case 'collections-sft':
       return 'SFT Collections';
     case 'meta-tokens':
-    case 'meta-esdt':
-      return 'Meta-ESDT';
+    case 'meta-dcdt':
+      return 'Meta-DCDT';
     case 'nfts':
       return 'NFTs';
     case 'sfts':

@@ -60,8 +60,8 @@ export const useShowGlobalStats = () => {
     case activeRoute(tokensRoutes.tokenDetailsLockedAccounts):
     case activeRoute(tokensRoutes.tokenDetailsRoles):
     case activeRoute(tokensRoutes.tokenDetailsAnalytics):
-    case activeRoute(tokensRoutes.tokensMetaEsdtDetails):
-    case activeRoute(tokensRoutes.tokensMetaEsdtDetailsRoles):
+    case activeRoute(tokensRoutes.tokensMetaDcdtDetails):
+    case activeRoute(tokensRoutes.tokensMetaDcdtDetailsRoles):
     case activeRoute(tokensRoutes.tokensProofDetails):
     case activeRoute(tokensRoutes.tokensProofDetailsAccounts):
     case activeRoute(transactionsRoutes.transactionDetails):
@@ -88,7 +88,7 @@ export const useShowCustomStats = () => {
     case activeRoute(accountsRoutes.accounts):
     case activeRoute(tokensRoutes.tokens):
     case activeRoute(tokensRoutes.tokensMeta):
-    case activeRoute(tokensRoutes.tokensMetaEsdt):
+    case activeRoute(tokensRoutes.tokensMetaDcdt):
     case activeRoute(collectionRoutes.collections):
     case activeRoute(collectionRoutes.collectionsNft):
     case activeRoute(collectionRoutes.collectionsSft):

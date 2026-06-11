@@ -55,8 +55,8 @@ export interface TokenExtraSliceType extends SliceType {
 }
 
 export enum TokenTypeEnum {
-  FungibleESDT = 'FungibleESDT',
-  MetaESDT = 'MetaESDT'
+  FungibleDCDT = 'FungibleDCDT',
+  MetaDCDT = 'MetaDCDT'
 }
 
 export enum TokenSortEnum {

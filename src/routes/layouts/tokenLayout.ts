@@ -18,9 +18,9 @@ import { TitledRouteObject } from '../routes';
 export const tokensRoutes = {
   tokens: '/tokens',
   tokensMeta: '/meta-tokens',
-  tokensMetaEsdt: '/meta-esdt',
-  tokensMetaEsdtDetails: '/meta-esdt/:hash',
-  tokensMetaEsdtDetailsRoles: '/meta-esdt/:hash/roles',
+  tokensMetaDcdt: '/meta-dcdt',
+  tokensMetaDcdtDetails: '/meta-dcdt/:hash',
+  tokensMetaDcdtDetailsRoles: '/meta-dcdt/:hash/roles',
   tokensProofDetails: '/proofs/:hash',
   tokensProofDetailsAccounts: '/proofs/:hash/accounts',
   tokenDetails: '/tokens/:hash',
@@ -33,30 +33,30 @@ export const tokensRoutes = {
 export const tokenLayout: TitledRouteObject[] = [
   {
     path: tokensRoutes.tokensMeta,
-    title: 'Meta-ESDT Tokens',
+    title: 'Meta-DCDT Tokens',
     preventScroll: true,
     Component: TokensMeta
   },
   {
-    path: tokensRoutes.tokensMetaEsdt,
-    title: 'Meta-ESDT Tokens',
+    path: tokensRoutes.tokensMetaDcdt,
+    title: 'Meta-DCDT Tokens',
     preventScroll: true,
     Component: TokensMeta
   },
   {
-    path: tokensRoutes.tokensMetaEsdtDetails,
+    path: tokensRoutes.tokensMetaDcdtDetails,
     preventScroll: true,
     Component: CollectionLayout,
     children: [
       {
-        path: tokensRoutes.tokensMetaEsdtDetails,
-        title: 'Meta-ESDT Transactions',
+        path: tokensRoutes.tokensMetaDcdtDetails,
+        title: 'Meta-DCDT Transactions',
         preventScroll: true,
         Component: CollectionTransactions
       },
       {
-        path: tokensRoutes.tokensMetaEsdtDetailsRoles,
-        title: 'Meta-ESDT Roles',
+        path: tokensRoutes.tokensMetaDcdtDetailsRoles,
+        title: 'Meta-DCDT Roles',
         preventScroll: true,
         Component: CollectionRoles
       }

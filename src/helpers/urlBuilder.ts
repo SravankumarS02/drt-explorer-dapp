@@ -104,17 +104,17 @@ export const urlBuilder = {
 
     return `/tokens/?${urlSearch}`;
   },
-  tokensMetaESDT: (params?: GetTokensType) => {
+  tokensMetaDCDT: (params?: GetTokensType) => {
     const urlSearch = params
       ? new URLSearchParams(params as Record<string, string>).toString()
       : '';
 
-    return `/meta-esdt/?${urlSearch}`;
+    return `/meta-dcdt/?${urlSearch}`;
   },
   tokenDetails: (tokenId: string) => `/tokens/${tokenId}`,
-  tokenMetaEsdtDetails: (tokenId: string) => `/meta-esdt/${tokenId}`,
-  tokenMetaEsdtDetailsRoles: (identifier: string) =>
-    `/meta-esdt/${identifier}/roles`,
+  tokenMetaDcdtDetails: (tokenId: string) => `/meta-dcdt/${tokenId}`,
+  tokenMetaDcdtDetailsRoles: (identifier: string) =>
+    `/meta-dcdt/${identifier}/roles`,
   tokenDetailsAccounts: (tokenId: string) => `/tokens/${tokenId}/accounts`,
   tokenDetailsLockedAccounts: (tokenId: string) =>
     `/tokens/${tokenId}/locked-accounts`,
@@ -123,9 +123,9 @@ export const urlBuilder = {
   proofDetails: (identifier: string) => `/proofs/${identifier}`,
   proofDetailsAccounts: (identifier: string) =>
     `/proofs/${identifier}/accounts`,
-  nativeTokenDetails: (egldLabel: string) => `/${egldLabel.toLowerCase()}`,
-  nativeTokenDetailsAccounts: (egldLabel: string) =>
-    `/${egldLabel.toLowerCase()}/accounts`,
+  nativeTokenDetails: (rewaLabel: string) => `/${rewaLabel.toLowerCase()}`,
+  nativeTokenDetailsAccounts: (rewaLabel: string) =>
+    `/${rewaLabel.toLowerCase()}/accounts`,
   collections: (params?: GetCollectionsType) => {
     const urlSearch = params
       ? new URLSearchParams(params as Record<string, string>).toString()

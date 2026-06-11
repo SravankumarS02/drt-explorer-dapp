@@ -42,9 +42,9 @@ export const CollectionDetailsCard = () => {
   } = collectionState;
 
   const titleTypeText =
-    activeRoute(tokensRoutes.tokensMetaEsdtDetails) ||
-    activeRoute(tokensRoutes.tokensMetaEsdtDetailsRoles)
-      ? 'Meta-ESDT'
+    activeRoute(tokensRoutes.tokensMetaDcdtDetails) ||
+    activeRoute(tokensRoutes.tokensMetaDcdtDetailsRoles)
+      ? 'Meta-DCDT'
       : 'Collection';
 
   const title = `${
@@ -68,7 +68,7 @@ export const CollectionDetailsCard = () => {
       }}
       className='collection-details'
       titleContent={
-        !scamInfo && type !== NftTypeEnum.MetaESDT ? (
+        !scamInfo && type !== NftTypeEnum.MetaDCDT ? (
           <SpotlightButton path={`/collections/${collection}`} />
         ) : null
       }

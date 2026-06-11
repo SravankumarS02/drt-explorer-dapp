@@ -68,7 +68,7 @@ export const NftDetailsCard = () => {
   const titleTickerText =
     ticker !== undefined &&
     ticker !== collection &&
-    type === NftTypeEnum.MetaESDT
+    type === NftTypeEnum.MetaDCDT
       ? ticker
       : '';
   const title = `${
@@ -115,7 +115,7 @@ export const NftDetailsCard = () => {
       }}
       className='nft-details'
       titleContent={
-        !scamInfo && type !== NftTypeEnum.MetaESDT ? (
+        !scamInfo && type !== NftTypeEnum.MetaDCDT ? (
           <SpotlightButton path={`/nfts/${identifier}`} />
         ) : null
       }
@@ -297,7 +297,7 @@ export const NftDetailsCard = () => {
               value: <>{royalties}%</>
             }
           : {},
-        supply !== undefined && type !== NftTypeEnum.NonFungibleESDT
+        supply !== undefined && type !== NftTypeEnum.NonFungibleDCDT
           ? {
               title: 'Supply',
               value: (

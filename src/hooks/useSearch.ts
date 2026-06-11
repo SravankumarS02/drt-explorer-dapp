@@ -14,7 +14,7 @@ import {
   bech32,
   formatHerotag,
   isProof,
-  isEgldToken
+  isRewaToken
 } from 'helpers';
 import { useAdapter, useGetHrp, useNetworkRoute } from 'hooks';
 import { Address } from 'lib';
@@ -45,7 +45,7 @@ export const useSearch = (hash: string) => {
   const [searchRoute, setSearchRoute] = useState('');
   const [isSearching, setIsSearching] = useState<undefined | boolean>();
 
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const notFoundRoute = networkRoute(`/search/${searchHash}`);
 
   const search = async () => {
@@ -72,7 +72,7 @@ export const useSearch = (hash: string) => {
         searchHash.startsWith('@') || searchHash.endsWith(HEROTAG_SUFFIX);
       const isNativeToken =
         NATIVE_TOKEN_IDENTIFIER.toLowerCase() === searchHash.toLowerCase() &&
-        isEgldToken(egldLabel);
+        isRewaToken(rewaLabel);
 
       let isPubKeyAccount = false;
       try {
@@ -80,16 +80,16 @@ export const useSearch = (hash: string) => {
           searchHash.length < 65 &&
           addressIsBech32(bech32.encode(searchHash, hrp));
       } catch {}
-      let isErdAddress = false;
+      let isDrtAddress = false;
       try {
-        const erdAddress = Address.newFromBech32(searchHash);
-        isErdAddress = erdAddress.getHrp() === DEFAULT_HRP;
+        const drtAddress = Address.newFromBech32(searchHash);
+        isDrtAddress = drtAddress.getHrp() === DEFAULT_HRP;
       } catch {}
 
       switch (true) {
         case isNativeToken:
           const newRoute = networkRoute(
-            urlBuilder.nativeTokenDetails(egldLabel ?? 'EGLD')
+            urlBuilder.nativeTokenDetails(rewaLabel ?? 'REWA')
           );
           setSearchRoute(newRoute);
 
@@ -103,16 +103,16 @@ export const useSearch = (hash: string) => {
           });
           break;
 
-        case isErdAddress:
+        case isDrtAddress:
         case isAccount:
           let searchAddress = searchHash;
-          if (isErdAddress) {
+          if (isDrtAddress) {
             try {
-              const erdAddress = new Address(
+              const drtAddress = new Address(
                 Address.newFromBech32(searchHash).getPublicKey(),
                 hrp
               ).toBech32();
-              searchAddress = erdAddress;
+              searchAddress = drtAddress;
             } catch {}
           }
 
@@ -234,13 +234,13 @@ export const useSearch = (hash: string) => {
           Promise.all([
             getTokens({
               search: searchHash,
-              includeMetaESDT: true,
+              includeMetaDCDT: true,
               fields: tokenQueryFields,
               ...defaultQueryParams
             }),
             getCollections({
               search: searchHash,
-              excludeMetaESDT: true,
+              excludeMetaDCDT: true,
               fields: collectionQueryFields,
               ...defaultQueryParams
             }),
@@ -260,23 +260,23 @@ export const useSearch = (hash: string) => {
           ]).then(([tokens, collections, applications, username, accounts]) => {
             switch (true) {
               case Boolean(tokens.success && tokens?.data?.[0]):
-                const isFirstMetaESDT =
-                  tokens.data[0].type === TokenTypeEnum.MetaESDT;
+                const isFirstMetaDCDT =
+                  tokens.data[0].type === TokenTypeEnum.MetaDCDT;
 
                 if (tokens.data.length === 1) {
                   const isNftProof = isProof(tokens.data[0]);
                   const metaRoute = isNftProof
                     ? urlBuilder.proofDetails(tokens.data[0].identifier)
-                    : urlBuilder.tokenMetaEsdtDetails(
+                    : urlBuilder.tokenMetaDcdtDetails(
                         tokens.data[0].identifier
                       );
-                  const route = isFirstMetaESDT
+                  const route = isFirstMetaDCDT
                     ? metaRoute
                     : urlBuilder.tokenDetails(tokens.data[0].identifier);
                   setSearchRoute(networkRoute(route));
                 } else {
-                  const route = isFirstMetaESDT
-                    ? urlBuilder.tokensMetaESDT({ search: searchHash })
+                  const route = isFirstMetaDCDT
+                    ? urlBuilder.tokensMetaDCDT({ search: searchHash })
                     : urlBuilder.tokens({ search: searchHash });
                   setSearchRoute(networkRoute(route));
                 }

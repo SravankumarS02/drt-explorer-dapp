@@ -7,7 +7,7 @@ export const useExtraRequests = () => {
   const { provider } = useAdapterConfig();
 
   return {
-    /* xExchange */
+    /* Dharitrix */
     getExchangeTokenPriceHistory: ({
       identifier,
       range = ExchangePriceRangeEnum.hourly,
@@ -18,12 +18,12 @@ export const useExtraRequests = () => {
     } & AxiosParamsApiType) => {
       if (range === ExchangePriceRangeEnum.daily) {
         return provider({
-          url: `/mex/tokens/prices/daily/${identifier}`,
+          url: `/moa/tokens/prices/daily/${identifier}`,
           signal
         });
       }
       return provider({
-        url: `/mex/tokens/prices/hourly/${identifier}`,
+        url: `/moa/tokens/prices/hourly/${identifier}`,
         signal
       });
     }

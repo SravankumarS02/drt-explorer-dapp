@@ -15,11 +15,11 @@ export const NftBlock = ({ value, operationToken }: NftBlockType) => {
   const isNftProof = isProof(operationToken);
   const metaDetails = isNftProof
     ? urlBuilder.proofDetails(operationToken?.identifier)
-    : urlBuilder.tokenMetaEsdtDetails(operationToken?.collection);
+    : urlBuilder.tokenMetaDcdtDetails(operationToken?.collection);
 
   return (
     <div className='nft-block d-flex text-truncate'>
-      {value && operationToken.type !== NftTypeEnum.NonFungibleESDT && (
+      {value && operationToken.type !== NftTypeEnum.NonFungibleDCDT && (
         <div className='me-1'>
           {operationToken.decimals !== undefined ? (
             <FormatAmount
@@ -36,7 +36,7 @@ export const NftBlock = ({ value, operationToken }: NftBlockType) => {
       )}
       <NetworkLink
         to={
-          operationToken.type === NftTypeEnum.MetaESDT
+          operationToken.type === NftTypeEnum.MetaDCDT
             ? metaDetails
             : urlBuilder.nftDetails(operationToken.identifier)
         }

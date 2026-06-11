@@ -4,7 +4,7 @@ import { Navigate, Outlet, useParams } from 'react-router-dom';
 
 import { NATIVE_TOKEN_IDENTIFIER } from 'appConstants';
 import { Loader } from 'components';
-import { isEgldToken } from 'helpers';
+import { isRewaToken } from 'helpers';
 import { useAdapter, useGetPage, useHasExchangeData } from 'hooks';
 import { activeNetworkSelector, tokenExtraSelector } from 'redux/selectors';
 import { setToken, setTokenExtra } from 'redux/slices';
@@ -19,16 +19,16 @@ export const TokenLayout = () => {
   const { getToken, getExchangeTokenPriceHistory } = useAdapter();
   const { hash: identifier = '' } = useParams();
   const { firstPageRefreshTrigger } = useGetPage();
-  const { id: activeNetworkId, egldLabel } = useSelector(activeNetworkSelector);
+  const { id: activeNetworkId, rewaLabel } = useSelector(activeNetworkSelector);
   const { tokenExtra } = useSelector(tokenExtraSelector);
 
   const hasExchangeData = useHasExchangeData();
-  const isEgldNetworkToken =
-    isEgldToken(egldLabel) &&
+  const isRewaNetworkToken =
+    isRewaToken(rewaLabel) &&
     identifier.toLowerCase() === NATIVE_TOKEN_IDENTIFIER.toLowerCase();
 
   const isNativeToken =
-    identifier.toLowerCase() === egldLabel?.toLowerCase() || isEgldNetworkToken;
+    identifier.toLowerCase() === rewaLabel?.toLowerCase() || isRewaNetworkToken;
 
   const [isDataReady, setIsDataReady] = useState<boolean | undefined>();
 
@@ -73,7 +73,7 @@ export const TokenLayout = () => {
   const failed = isDataReady === false;
 
   if (isNativeToken) {
-    return <Navigate replace to={`/${egldLabel?.toLowerCase()}`} />;
+    return <Navigate replace to={`/${rewaLabel?.toLowerCase()}`} />;
   }
 
   if (failed) {

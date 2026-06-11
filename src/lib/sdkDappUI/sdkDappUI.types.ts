@@ -1,1 +1,1 @@
-export type { MvxCopyButton as MvxCopyButtonPropsType } from '@multiversx/sdk-dapp-ui/web-components/mvx-copy-button';
+export type { DrtCopyButton as DrtCopyButtonPropsType } from '@sravankumar02/sdk-dapp-ui/web-components/drt-copy-button';

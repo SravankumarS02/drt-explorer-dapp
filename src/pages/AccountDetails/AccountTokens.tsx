@@ -44,9 +44,9 @@ export const AccountTokens = () => {
         page,
         size,
         address,
-        includeMetaESDT: true
+        includeMetaDCDT: true
       }),
-      getAccountTokensCount({ address, includeMetaESDT: true })
+      getAccountTokensCount({ address, includeMetaDCDT: true })
     ]).then(([accountTokensData, accountTokensCountData]) => {
       if (ref.current !== null) {
         if (accountTokensData.success && accountTokensCountData.success) {

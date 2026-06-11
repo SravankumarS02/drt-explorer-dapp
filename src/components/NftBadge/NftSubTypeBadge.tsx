@@ -11,22 +11,22 @@ export const NftSubTypeBadge = ({
 }) => {
   switch (subType) {
     // NFT Subtypes
-    case NftSubtypeEnum.DynamicSemiFungibleESDT:
-    case NftSubtypeEnum.DynamicNonFungibleESDT:
-    case NftSubtypeEnum.NonFungibleESDTv2:
-    case NftSubtypeEnum.DynamicMetaESDT:
+    case NftSubtypeEnum.DynamicSemiFungibleDCDT:
+    case NftSubtypeEnum.DynamicNonFungibleDCDT:
+    case NftSubtypeEnum.NonFungibleDCDTv2:
+    case NftSubtypeEnum.DynamicMetaDCDT:
       return (
         <div
           className={classNames(
             'badge',
             {
               'badge-orange text-orange-100':
-                subType === NftSubtypeEnum.DynamicSemiFungibleESDT,
+                subType === NftSubtypeEnum.DynamicSemiFungibleDCDT,
               'badge-yellow text-orange-100':
-                subType === NftSubtypeEnum.DynamicNonFungibleESDT ||
-                subType === NftSubtypeEnum.NonFungibleESDTv2,
+                subType === NftSubtypeEnum.DynamicNonFungibleDCDT ||
+                subType === NftSubtypeEnum.NonFungibleDCDTv2,
               'badge-green text-green-100':
-                subType === NftSubtypeEnum.DynamicMetaESDT
+                subType === NftSubtypeEnum.DynamicMetaDCDT
             },
             className
           )}

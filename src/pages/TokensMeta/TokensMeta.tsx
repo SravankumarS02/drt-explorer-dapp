@@ -46,7 +46,7 @@ export const TokensMeta = () => {
   >(ELLIPSIS);
 
   const fetchMetaCollections = () => {
-    const type = 'MetaESDT';
+    const type = 'MetaDCDT';
 
     Promise.all([
       getCollections({ search, page, size, type }),
@@ -82,7 +82,7 @@ export const TokensMeta = () => {
                     data-testid='title'
                     className='table-title d-flex align-items-center'
                   >
-                    Meta-ESDT
+                    Meta-DCDT
                   </h5>
                 </div>
                 <div className='card-header-item table-card-header d-flex justify-content-between align-items-center flex-wrap gap-3'>
@@ -102,14 +102,14 @@ export const TokensMeta = () => {
                       </li>
                       <li className='list-inline-item me-0'>
                         <NetworkLink
-                          to={tokensRoutes.tokensMetaEsdt}
+                          to={tokensRoutes.tokensMetaDcdt}
                           className={`badge py-2 px-3 br-lg ${
-                            activeRoute(tokensRoutes.tokensMetaEsdt)
+                            activeRoute(tokensRoutes.tokensMetaDcdt)
                               ? 'badge-grey'
                               : 'badge-outline badge-outline-grey'
                           }`}
                         >
-                          Meta-ESDT
+                          Meta-DCDT
                         </NetworkLink>
                       </li>
                     </menu>
@@ -118,7 +118,7 @@ export const TokensMeta = () => {
                         className='input-group-sm'
                         searchValue={totalMetaCollections}
                         placeholderText='token'
-                        name='metaEsdtSearch'
+                        name='metaDcdtSearch'
                       />
                     </div>
                   </div>
@@ -154,10 +154,10 @@ export const TokensMeta = () => {
                             <div className='token-identity d-flex flex-row'>
                               <div className='d-flex align-items-center me-3'>
                                 <NetworkLink
-                                  to={urlBuilder.tokenMetaEsdtDetails(
+                                  to={urlBuilder.tokenMetaDcdtDetails(
                                     metaCollection.collection
                                   )}
-                                  data-testid={`metaEsdtsLink${i}`}
+                                  data-testid={`metaDcdtsLink${i}`}
                                   className='side-link'
                                 >
                                   {metaCollection.assets &&
@@ -177,10 +177,10 @@ export const TokensMeta = () => {
 
                               <div className='d-flex flex-column justify-content-center'>
                                 <NetworkLink
-                                  to={urlBuilder.tokenMetaEsdtDetails(
+                                  to={urlBuilder.tokenMetaDcdtDetails(
                                     metaCollection.collection
                                   )}
-                                  data-testid={`metaEsdtsLink${i}`}
+                                  data-testid={`metaDcdtsLink${i}`}
                                   className='d-block token-ticker'
                                 >
                                   {metaCollection.ticker}

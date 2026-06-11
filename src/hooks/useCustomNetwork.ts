@@ -13,7 +13,7 @@ export interface CustomNetworkErrorType {
   apiAddress?: string;
   chainId?: string;
   adapter?: string;
-  egldLabel?: string;
+  rewaLabel?: string;
   explorerAddress?: string;
 }
 
@@ -72,17 +72,17 @@ export const useCustomNetwork = (customUrl: string) => {
     if (data && success) {
       const {
         chainId,
-        egldLabel,
+        rewaLabel,
         explorerAddress,
         walletAddress,
         name,
         refreshRate
       } = data as DappNetworkConfigType;
       const hrp =
-        networkConfig?.data?.data?.config?.erd_address_hrp ?? DEFAULT_HRP;
+        networkConfig?.data?.data?.config?.drt_address_hrp ?? DEFAULT_HRP;
       const updatesWebsocketUrl = websocketConfig?.data?.url;
 
-      if (chainId && egldLabel && walletAddress && explorerAddress) {
+      if (chainId && rewaLabel && walletAddress && explorerAddress) {
         const customNetwork = {
           id: CUSTOM_NETWORK_ID,
           name: `Custom ${name ?? 'Network'}`,
@@ -92,7 +92,7 @@ export const useCustomNetwork = (customUrl: string) => {
           refreshRate: refreshRate ?? REFRESH_RATE,
           apiAddress,
           chainId,
-          egldLabel,
+          rewaLabel,
           hrp,
           walletAddress,
           explorerAddress,

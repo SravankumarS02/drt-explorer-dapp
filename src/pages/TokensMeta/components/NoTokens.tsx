@@ -5,7 +5,7 @@ export const NoTokens = () => {
   return (
     <PageState
       icon={faCoins}
-      title='No Meta-ESDT Tokens'
+      title='No Meta-DCDT Tokens'
       className='py-spacer my-auto'
     />
   );

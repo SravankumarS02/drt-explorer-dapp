@@ -2,16 +2,16 @@ import { ScamInfoType, SliceType } from './general.types';
 import { TokenAssetType } from './token.types';
 
 export enum NftTypeEnum {
-  NonFungibleESDT = 'NonFungibleESDT',
-  SemiFungibleESDT = 'SemiFungibleESDT',
-  MetaESDT = 'MetaESDT'
+  NonFungibleDCDT = 'NonFungibleDCDT',
+  SemiFungibleDCDT = 'SemiFungibleDCDT',
+  MetaDCDT = 'MetaDCDT'
 }
 
 export enum NftSubtypeEnum {
-  NonFungibleESDTv2 = 'NonFungibleESDTv2',
-  DynamicNonFungibleESDT = 'DynamicNonFungibleESDT',
-  DynamicSemiFungibleESDT = 'DynamicSemiFungibleESDT',
-  DynamicMetaESDT = 'DynamicMetaESDT'
+  NonFungibleDCDTv2 = 'NonFungibleDCDTv2',
+  DynamicNonFungibleDCDT = 'DynamicNonFungibleDCDT',
+  DynamicSemiFungibleDCDT = 'DynamicSemiFungibleDCDT',
+  DynamicMetaDCDT = 'DynamicMetaDCDT'
 }
 
 export interface NftType {

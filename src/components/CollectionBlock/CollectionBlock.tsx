@@ -6,8 +6,8 @@ export const CollectionBlock = ({ nft }: { nft: NftType }) => (
   <div className='collection-block d-flex text-truncate'>
     <NetworkLink
       to={
-        nft?.type === NftTypeEnum.MetaESDT
-          ? urlBuilder.tokenMetaEsdtDetails(nft.collection)
+        nft?.type === NftTypeEnum.MetaDCDT
+          ? urlBuilder.tokenMetaDcdtDetails(nft.collection)
           : urlBuilder.collectionDetails(nft.collection)
       }
       className={`d-flex text-truncate ${

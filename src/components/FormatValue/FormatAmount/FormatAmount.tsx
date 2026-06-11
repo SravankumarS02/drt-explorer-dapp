@@ -9,7 +9,7 @@ import {
 } from 'appConstants';
 import { NativeTokenSymbol } from 'components';
 import { DECIMALS, DIGITS } from 'config';
-import { formatAmount, isEgldToken } from 'helpers';
+import { formatAmount, isRewaToken } from 'helpers';
 import { stringIsInteger } from 'lib';
 import { activeNetworkSelector, economicsSelector } from 'redux/selectors';
 
@@ -25,7 +25,7 @@ export interface FormatAmountUIType extends WithClassnameType {
   token?: string;
   digits?: number;
   decimals?: number;
-  egldLabel?: string;
+  rewaLabel?: string;
   'data-testid'?: string;
 
   showTooltip?: boolean;
@@ -39,10 +39,10 @@ export interface FormatAmountUIType extends WithClassnameType {
 }
 
 export const FormatAmount = (props: FormatAmountUIType) => {
-  const { egldLabel: networkEgldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel: networkRewaLabel } = useSelector(activeNetworkSelector);
   const { isDataReady, unprocessed } = useSelector(economicsSelector);
   const {
-    egldLabel,
+    rewaLabel,
     value,
     className,
     token,
@@ -55,11 +55,11 @@ export const FormatAmount = (props: FormatAmountUIType) => {
     showTooltip = true,
     usd
   } = props;
-  const label = egldLabel ?? networkEgldLabel;
+  const label = rewaLabel ?? networkRewaLabel;
   const displayLabel =
     label === NATIVE_TOKEN_IDENTIFIER ? NATIVE_TOKEN_SEARCH_LABEL : label;
   const dataTestId = props['data-testid'] ?? 'formatAmountComponent';
-  const isCustomIcon = !isEgldToken(networkEgldLabel);
+  const isCustomIcon = !isRewaToken(networkRewaLabel);
 
   if (!stringIsInteger(value)) {
     return (

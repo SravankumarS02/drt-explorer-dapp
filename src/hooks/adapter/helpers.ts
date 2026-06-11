@@ -260,7 +260,7 @@ export function getTokensParams({
   search,
   name,
   identifier,
-  includeMetaESDT,
+  includeMetaDCDT,
 
   // include data
   withUsername = true,
@@ -282,7 +282,7 @@ export function getTokensParams({
     ...(search !== undefined ? { search } : {}),
     ...(name !== undefined ? { name } : {}),
     ...(identifier !== undefined ? { identifier } : {}),
-    ...(includeMetaESDT !== undefined ? { includeMetaESDT } : {})
+    ...(includeMetaDCDT !== undefined ? { includeMetaDCDT } : {})
   };
 
   return params;
@@ -298,7 +298,7 @@ export function getCollectionsParams({
   search,
   identifiers,
   type,
-  excludeMetaESDT,
+  excludeMetaDCDT,
 
   // include data
   withOwner,
@@ -319,7 +319,7 @@ export function getCollectionsParams({
     ...(search !== undefined ? { search } : {}),
     ...(identifiers !== undefined ? { identifiers } : {}),
     ...(type !== undefined ? { type } : {}),
-    ...(excludeMetaESDT !== undefined ? { excludeMetaESDT } : {})
+    ...(excludeMetaDCDT !== undefined ? { excludeMetaDCDT } : {})
   };
 
   return params;
@@ -341,7 +341,7 @@ export function getNftsParams({
   creator,
   hasUris,
   includeFlagged = true,
-  excludeMetaESDT,
+  excludeMetaDCDT,
   source,
 
   // include data
@@ -374,7 +374,7 @@ export function getNftsParams({
     ...(source !== undefined ? { source } : {}),
     ...(hasUris !== undefined ? { hasUris } : {}),
     ...(includeFlagged !== undefined ? { includeFlagged } : {}),
-    ...(excludeMetaESDT !== undefined ? { excludeMetaESDT } : {})
+    ...(excludeMetaDCDT !== undefined ? { excludeMetaDCDT } : {})
   };
 
   return params;

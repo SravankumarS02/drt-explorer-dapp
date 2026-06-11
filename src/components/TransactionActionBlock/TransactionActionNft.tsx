@@ -49,10 +49,10 @@ export const TransactionActionNft = ({
 
   return (
     <div className='nft-action-block d-contents'>
-      {showBadge && token.type !== NftTypeEnum.MetaESDT && (
+      {showBadge && token.type !== NftTypeEnum.MetaDCDT && (
         <NftBadge type={token.type} className='me-1 my-auto' />
       )}
-      {!noValue && token.type !== NftTypeEnum.NonFungibleESDT && (
+      {!noValue && token.type !== NftTypeEnum.NonFungibleDCDT && (
         <div className={`me-1  ${token.svgUrl ? 'text-truncate' : ''}`}>
           {token.decimals !== undefined && tokenValue !== undefined ? (
             <FormatAmount
@@ -77,18 +77,18 @@ export const TransactionActionNft = ({
       {token.identifier ? (
         <NetworkLink
           to={
-            token.type === NftTypeEnum.MetaESDT && token?.collection
+            token.type === NftTypeEnum.MetaDCDT && token?.collection
               ? isProof(token)
                 ? urlBuilder.proofDetails(token?.identifier)
-                : urlBuilder.tokenMetaEsdtDetails(token?.collection)
+                : urlBuilder.tokenMetaDcdtDetails(token?.collection)
               : urlBuilder.nftDetails(token.identifier)
           }
           className={`d-flex text-truncate ${token.svgUrl ? 'side-link' : ''}`}
-          {...(token.type === NftTypeEnum.MetaESDT
+          {...(token.type === NftTypeEnum.MetaDCDT
             ? { 'aria-label': token.identifier }
             : {})}
         >
-          {token.type === NftTypeEnum.MetaESDT && token?.svgUrl ? (
+          {token.type === NftTypeEnum.MetaDCDT && token?.svgUrl ? (
             <Overlay title={token.identifier} truncate>
               <TokenInfo />
             </Overlay>

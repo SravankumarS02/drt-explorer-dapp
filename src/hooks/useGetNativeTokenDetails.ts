@@ -29,7 +29,7 @@ export interface NativeTokenType {
 }
 
 export const useGetNativeTokenDetails = () => {
-  const { egldLabel, name, decimals } = useSelector(activeNetworkSelector);
+  const { rewaLabel, name, decimals } = useSelector(activeNetworkSelector);
   const {
     unprocessed: { price, marketCap, totalSupply, circulatingSupply }
   } = useSelector(economicsSelector);
@@ -39,10 +39,10 @@ export const useGetNativeTokenDetails = () => {
 
   const isSovereign = useIsSovereign();
 
-  const displayName = `${isSovereign ? name : BRAND_NAME} ${egldLabel}`;
+  const displayName = `${isSovereign ? name : BRAND_NAME} ${rewaLabel}`;
   const description = isSovereign
-    ? `${egldLabel} Token is native to ${name ?? BRAND_NAME}`
-    : `The ${BRAND_NAME} eGold (${egldLabel}) Token is native to the ${BRAND_NAME} Network and will be used for everything from staking, governance, transactions, smart contracts and validator rewards.`;
+    ? `${rewaLabel} Token is native to ${name ?? BRAND_NAME}`
+    : `The ${BRAND_NAME} eGold (${rewaLabel}) Token is native to the ${BRAND_NAME} Network and will be used for everything from staking, governance, transactions, smart contracts and validator rewards.`;
 
   const nativeTokenTransactions = new BigNumber(transactions || 0).minus(
     scResults || 0
@@ -52,23 +52,23 @@ export const useGetNativeTokenDetails = () => {
     description,
     ...(!isSovereign
       ? {
-          website: 'https://multiversx.com/',
+          website: 'https://dharitri.org/',
           social: {
-            blog: 'https://multiversx.com/blog',
-            x: 'https://x.com/MultiversX',
-            telegram: 'https://t.me/MultiversX',
-            discord: 'https://discord.com/invite/multiversxbuilders',
-            facebook: 'https://www.facebook.com/MultiversX/',
-            linkedin: 'https://www.linkedin.com/company/multiversx'
+            blog: 'https://dharitri.org/blog',
+            x: 'https://x.com/DharitrI',
+            telegram: 'https://t.me/DharitrI',
+            discord: 'https://discord.com/invite/dharitribuilders',
+            facebook: 'https://www.facebook.com/DharitrI/',
+            linkedin: 'https://www.linkedin.com/company/dharitri'
           }
         }
       : {})
   };
 
   return {
-    identifier: egldLabel,
-    ticker: egldLabel,
-    name: egldLabel,
+    identifier: rewaLabel,
+    ticker: rewaLabel,
+    name: rewaLabel,
     decimals: Number(decimals ?? DECIMALS),
     supply: totalSupply,
     circulatingSupply,

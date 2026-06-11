@@ -1,1 +1,1 @@
-export { MvxCopyButton, MvxTrim } from '@multiversx/sdk-dapp-ui/react';
+export { DrtCopyButton, DrtTrim } from '@sravankumar02/sdk-dapp-ui/react';

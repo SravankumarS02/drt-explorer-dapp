@@ -1,1 +1,1 @@
-export type { NativeAuthDecoded } from '@multiversx/sdk-native-auth-server/lib/src/entities/native.auth.decoded';
+export type { NativeAuthDecoded } from '@terradharitri/sdk-native-auth-server/lib/src/entities/native.auth.decoded';

@@ -100,7 +100,7 @@ export const TokenSelectFilter = ({
   showAllPlaceholder = 'Show All',
   noOptionsMessage
 }: TokenSelectFilterUIType) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const [defaultValue, setDefaultValue] = useState<SelectOptionType>();
   const activeRoute = useActiveRoute();
   const address = useGetHash();
@@ -135,18 +135,18 @@ export const TokenSelectFilter = ({
       (option) => option.label === showAllPlaceholder
     );
 
-    const hasExistingEgldOption = appendedDefaultOptions.find(
-      (option) => option.label === egldLabel
+    const hasExistingRewaOption = appendedDefaultOptions.find(
+      (option) => option.label === rewaLabel
     );
 
     if (hasShowAllOption && !hasExistingShowAllOption) {
       appendedDefaultOptions.push({ value: '', label: showAllPlaceholder });
     }
 
-    if (!hasExistingEgldOption && egldLabel) {
+    if (!hasExistingRewaOption && rewaLabel) {
       appendedDefaultOptions.push({
         value: NATIVE_TOKEN_SEARCH_LABEL,
-        label: egldLabel
+        label: rewaLabel
       });
     }
 
@@ -160,18 +160,18 @@ export const TokenSelectFilter = ({
     );
 
     return unique(appendedDefaultOptions);
-  }, [options, egldLabel, showAllPlaceholder, defaultValue]);
+  }, [options, rewaLabel, showAllPlaceholder, defaultValue]);
 
   useEffect(() => {
     if (defaultValue || existingValues.length === 0) {
       return;
     }
     const searchedToken = existingValues[0];
-    const isEgld = searchedToken === NATIVE_TOKEN_SEARCH_LABEL;
-    if (isEgld && egldLabel) {
+    const isRewa = searchedToken === NATIVE_TOKEN_SEARCH_LABEL;
+    if (isRewa && rewaLabel) {
       const defaultVal = {
         value: NATIVE_TOKEN_SEARCH_LABEL,
-        label: egldLabel
+        label: rewaLabel
       };
       setDefaultValue(defaultVal);
       return;
@@ -210,7 +210,7 @@ export const TokenSelectFilter = ({
         });
       }
     });
-  }, [existingValues, defaultValue, egldLabel]);
+  }, [existingValues, defaultValue, rewaLabel]);
 
   const updateSelectValue = (selectValue: string) => {
     const paramsObject = Object.fromEntries(searchParams);

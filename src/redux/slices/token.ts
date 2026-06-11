@@ -4,7 +4,7 @@ import { TokenSliceType, TokenTypeEnum } from 'types/token.types';
 export const getInitialTokenState = (): TokenSliceType => {
   return {
     token: {
-      type: TokenTypeEnum.FungibleESDT,
+      type: TokenTypeEnum.FungibleDCDT,
       identifier: '',
       ticker: '',
       name: '',

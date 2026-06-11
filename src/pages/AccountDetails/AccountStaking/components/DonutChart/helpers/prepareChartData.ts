@@ -83,8 +83,8 @@ export const prepareChartData = ({
         showLastNonZeroDecimal: false
       });
       chartData.push({
-        name: 'MultiversX Legacy Delegation',
-        identifier: 'multiversx',
+        name: 'DharitrI Legacy Delegation',
+        identifier: 'dharitri',
         value: Number(amount)
       });
     }

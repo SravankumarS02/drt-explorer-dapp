@@ -42,8 +42,8 @@ export const CollectionNfts = () => {
           page,
           size,
           collection,
-          ...(type === NftTypeEnum.NonFungibleESDT ? { withOwner: true } : {}),
-          ...(type === NftTypeEnum.SemiFungibleESDT ? { withSupply: true } : {})
+          ...(type === NftTypeEnum.NonFungibleDCDT ? { withOwner: true } : {}),
+          ...(type === NftTypeEnum.SemiFungibleDCDT ? { withSupply: true } : {})
         }),
         getCollectionNftsCount({ search, collection })
       ]).then(([nftsData, count]) => {
@@ -86,8 +86,8 @@ export const CollectionNfts = () => {
                       <th>Name</th>
                       <th>Creator</th>
                       <th>
-                        {type === NftTypeEnum.NonFungibleESDT && <>Owner</>}
-                        {type === NftTypeEnum.SemiFungibleESDT && <>Supply</>}
+                        {type === NftTypeEnum.NonFungibleDCDT && <>Owner</>}
+                        {type === NftTypeEnum.SemiFungibleDCDT && <>Supply</>}
                       </th>
                     </tr>
                   </thead>
@@ -115,7 +115,7 @@ export const CollectionNfts = () => {
                                 <div>{nft.identifier}</div>
                               </div>
                             </NetworkLink>
-                            {type !== NftTypeEnum.MetaESDT && (
+                            {type !== NftTypeEnum.MetaDCDT && (
                               <NftBadge
                                 type={nft.type}
                                 subType={nft.subType}
@@ -135,13 +135,13 @@ export const CollectionNfts = () => {
                           </div>
                         </td>
                         <td>
-                          {type === NftTypeEnum.NonFungibleESDT &&
+                          {type === NftTypeEnum.NonFungibleDCDT &&
                             nft?.owner && (
                               <div className='d-flex trim-size-xl'>
                                 <AccountLink address={nft.owner} />
                               </div>
                             )}
-                          {type === NftTypeEnum.SemiFungibleESDT &&
+                          {type === NftTypeEnum.SemiFungibleDCDT &&
                             nft?.supply && (
                               <>{formatBigNumber({ value: nft.supply })}</>
                             )}

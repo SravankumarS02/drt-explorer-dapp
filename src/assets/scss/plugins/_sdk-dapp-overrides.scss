@@ -149,7 +149,7 @@
   }
 }
 
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-loader,
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-loader,
 .dapp-core-component__ledgerLoadingStyles__ledger-loading-wrapper {
   .dapp-core-component__main__icon-state svg {
     width: 6rem;
@@ -322,7 +322,7 @@
 
 // misc
 .dapp-core-component__ledgerConnectStyles__login-connect-container-link,
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-legacy-link,
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-legacy-link,
 .dapp-core-component__main__link-style {
   @extend .link-style !optional;
 }
@@ -433,7 +433,7 @@
 }
 
 .dapp-core-component__dappModalStyles__dappModalContent,
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-login-container {
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-login-container {
   border-radius: var(--border-radius) !important;
 }
 
@@ -442,15 +442,15 @@
   padding-bottom: 30px !important;
 }
 
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-container-button-icon {
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-container-button-icon {
   path {
     fill: var(--body-color);
   }
 }
 
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-pairings-list {
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-pairings-list {
   padding: 0 1rem 0.5rem 1rem;
-  .dapp-core-component__walletConnectLoginContainerStyles__xPortal-pairing-button {
+  .dapp-core-component__walletConnectLoginContainerStyles__tDharitri-pairing-button {
     background: var(--neutral-800) !important;
 
     border: 1px solid transparent !important;
@@ -466,7 +466,7 @@
       color: var(--body-color) !important;
       border: 1px solid var(--primary) !important;
     }
-    .dapp-core-component__walletConnectLoginContainerStyles__xPortal-pairing-image {
+    .dapp-core-component__walletConnectLoginContainerStyles__tDharitri-pairing-image {
       width: 2.5rem;
     }
   }
@@ -519,7 +519,7 @@
   padding-right: 0 !important;
   padding-bottom: 1rem !important;
 }
-.dapp-core-component__walletConnectLoginContainerStyles__xPortal-content {
+.dapp-core-component__walletConnectLoginContainerStyles__tDharitri-content {
   padding: 0 0 2rem !important;
 }
 

@@ -1,2 +1,2 @@
-export { Address } from '@multiversx/sdk-core/out';
-export { LibraryConfig } from '@multiversx/sdk-core/out';
+export { Address } from '@sravankumar02/sdk-core/out';
+export { LibraryConfig } from '@sravankumar02/sdk-core/out';

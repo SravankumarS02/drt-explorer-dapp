@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useSelector } from 'react-redux';
 
 import { ELLIPSIS } from 'appConstants';
-import MultiversXSymbol from 'assets/img/multiversx-legacy-delegation.svg';
+import DharitrISymbol from 'assets/img/dharitri-legacy-delegation.svg';
 import { FormatAmount } from 'components';
 import { faLeaf } from 'icons/regular';
 import { activeNetworkSelector, economicsSelector } from 'redux/selectors';
@@ -23,7 +23,7 @@ export const AccountLegacyDelegation = ({
     isDataReady,
     unprocessed: { baseApr, topUpApr }
   } = useSelector(economicsSelector);
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
   const {
     userActiveStake,
@@ -56,12 +56,12 @@ export const AccountLegacyDelegation = ({
     <div className='delegation-row d-flex flex-wrap align-items-center justify-content-between p-3 px-md-4'>
       <div className='provider-details'>
         <div className='d-flex flex-row align-items-center'>
-          <div className='multiversx-icon provider-image has-avatar rounded-circle d-flex me-3'>
-            <MultiversXSymbol />
+          <div className='dharitri-icon provider-image has-avatar rounded-circle d-flex me-3'>
+            <DharitrISymbol />
           </div>
           <div className='d-flex flex-column w-100'>
             <div className='provider-title font-headings d-flex align-items-center'>
-              MultiversX Legacy Delegation
+              DharitrI Legacy Delegation
             </div>
             {identity && (
               <div className='d-flex flex-wrap provider-metrics'>
@@ -125,7 +125,7 @@ export const AccountLegacyDelegation = ({
               value={new BigNumber(claimableRewards).toString(10)}
             />
           ) : (
-            <>0 {egldLabel}</>
+            <>0 {rewaLabel}</>
           )}
         </strong>
         <small>Rewards</small>

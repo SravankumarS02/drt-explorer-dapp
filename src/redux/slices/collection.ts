@@ -6,7 +6,7 @@ export const getInitialCollectionState = (): CollectionSliceType => {
   return {
     collectionState: {
       collection: '',
-      type: NftTypeEnum.NonFungibleESDT,
+      type: NftTypeEnum.NonFungibleDCDT,
       name: '',
       ticker: '',
       timestamp: 0,

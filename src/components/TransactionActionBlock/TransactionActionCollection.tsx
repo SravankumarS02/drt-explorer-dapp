@@ -11,8 +11,8 @@ export const TransactionActionCollection = ({
     {token && token.collection && (
       <NetworkLink
         to={
-          token?.type === NftTypeEnum.MetaESDT
-            ? urlBuilder.tokenMetaEsdtDetails(token.collection)
+          token?.type === NftTypeEnum.MetaDCDT
+            ? urlBuilder.tokenMetaDcdtDetails(token.collection)
             : urlBuilder.collectionDetails(token.collection)
         }
         className={`d-flex text-truncate ${token.svgUrl ? 'side-link' : ''}`}

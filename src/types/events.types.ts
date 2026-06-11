@@ -29,17 +29,17 @@ export interface CustomEventsSliceType extends EventsSliceType {
 }
 
 export enum TransactionEventIdentifiersEnum {
-  ESDTNFTTransfer = 'ESDTNFTTransfer',
-  ESDTNFTBurn = 'ESDTNFTBurn',
-  ESDTNFTAddQuantity = 'ESDTNFTAddQuantity',
-  ESDTNFTCreate = 'ESDTNFTCreate',
-  MultiESDTNFTTransfer = 'MultiESDTNFTTransfer',
-  ESDTTransfer = 'ESDTTransfer',
-  ESDTBurn = 'ESDTBurn',
-  ESDTLocalMint = 'ESDTLocalMint',
-  ESDTLocalBurn = 'ESDTLocalBurn',
-  ESDTWipe = 'ESDTWipe',
-  ESDTFreeze = 'ESDTFreeze',
+  DCDTNFTTransfer = 'DCDTNFTTransfer',
+  DCDTNFTBurn = 'DCDTNFTBurn',
+  DCDTNFTAddQuantity = 'DCDTNFTAddQuantity',
+  DCDTNFTCreate = 'DCDTNFTCreate',
+  MultiDCDTNFTTransfer = 'MultiDCDTNFTTransfer',
+  DCDTTransfer = 'DCDTTransfer',
+  DCDTBurn = 'DCDTBurn',
+  DCDTLocalMint = 'DCDTLocalMint',
+  DCDTLocalBurn = 'DCDTLocalBurn',
+  DCDTWipe = 'DCDTWipe',
+  DCDTFreeze = 'DCDTFreeze',
   transferValueOnly = 'transferValueOnly',
   writeLog = 'writeLog',
   signalError = 'signalError'

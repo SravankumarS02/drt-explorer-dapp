@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
 import { BRAND_NAME } from 'appConstants';
-import MultiversXLogo from 'assets/img/logo-full.svg';
-import MultiversXSymbol from 'assets/img/symbol.svg';
+import DharitrILogo from 'assets/img/logo-full.svg';
+import DharitrISymbol from 'assets/img/symbol.svg';
 import { NetworkLink } from 'components';
 import { useIsMainnet, useGetExplorerTitle } from 'hooks';
 import { faGrid, faGrid2 } from 'icons/solid';
@@ -77,10 +77,10 @@ export const Header = memo((props: HeaderPropsType) => {
           aria-label={`${BRAND_NAME} Explorer`}
         >
           {isMainnet ? (
-            <MultiversXLogo />
+            <DharitrILogo />
           ) : (
             <span className='header-symbol'>
-              <MultiversXSymbol />
+              <DharitrISymbol />
               <span className='header-title'>{explorerTitle}</span>
             </span>
           )}

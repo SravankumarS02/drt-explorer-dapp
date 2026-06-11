@@ -2,12 +2,12 @@ import { NftTypeEnum } from 'types';
 
 export const getNftText = (type: NftTypeEnum) => {
   switch (type) {
-    case NftTypeEnum.SemiFungibleESDT:
+    case NftTypeEnum.SemiFungibleDCDT:
       return 'SFT';
-    case NftTypeEnum.NonFungibleESDT:
+    case NftTypeEnum.NonFungibleDCDT:
       return 'NFT';
-    case NftTypeEnum.MetaESDT:
-      return 'Meta-ESDT';
+    case NftTypeEnum.MetaDCDT:
+      return 'Meta-DCDT';
     default:
       return '';
   }
