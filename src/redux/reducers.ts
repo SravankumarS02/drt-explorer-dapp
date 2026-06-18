@@ -57,24 +57,22 @@ import {
 
 const asyncIgnoredSlices = {};
 
-// const networkPersisted = {
-//   key: 'networks',
-//   storage: sessionStorage,
-//   blacklist: []
-// };
+const networkPersisted = {
+  key: 'networks',
+  storage,
+  blacklist: []
+};
 
-// const interfacePersisted = {
-//   key: 'interface',
-//   storage,
-//   blacklist: []
-// };
+const interfacePersisted = {
+  key: 'interface',
+  storage,
+  blacklist: []
+};
 
 export const customIgnoredSlices = {
-  // networks: persistReducer(networkPersisted, networkReducer),
-  // interface: persistReducer(interfacePersisted, interfaceReducer),
+  networks: persistReducer(networkPersisted, networkReducer),
+  interface: persistReducer(interfacePersisted, interfaceReducer),
 
-  networks: networkReducer,
-  interface: interfaceReducer,
 
   account: accountReducer,
   accountExtra: accountExtraReducer,
