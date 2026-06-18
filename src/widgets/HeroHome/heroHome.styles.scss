@@ -1,0 +1,77 @@
+.hero-home {
+  position: relative;
+  background-image: url('../../assets/img/three/static-bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  @include media-breakpoint-up(md) {
+    min-height: 600px;
+  }
+  [data-theme='light'] body &,
+  [data-theme='dark'] body & {
+    h1.title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .main-search {
+    input::placeholder {
+      font-size: 0.781rem;
+      color: var(--neutral-600);
+    }
+    .form-control {
+      [data-theme='light'] body & {
+        background-color: #f5f5dc;
+        color: var(--neutral-900);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      [data-theme='dark'] body & {
+        background-color: #171717; /* Grey for search bar */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--neutral-100);
+      }
+    }
+    .input-group-text {
+      border-color: transparent !important;
+      background-color: transparent !important;
+
+      [data-theme='light'] body & {
+        color: var(--neutral-900);
+      }
+      [data-theme='dark'] body & {
+        color: var(--neutral-100);
+      }
+    }
+  }
+  .card {
+    @include media-breakpoint-up(xxl) {
+      flex-basis: 20%;
+    }
+    
+    [data-theme='light'] body & {
+      background-color: #f5f5dc !important;
+      color: var(--neutral-900) !important;
+    }
+    
+    [data-theme='dark'] body & {
+      background-color: #171717 !important;
+      color: var(--neutral-100) !important;
+    }
+    
+    display: flex;
+
+    .stats-card-value {
+      margin-bottom: 0.5rem;
+    }
+    &.card-solitary {
+      max-width: 100%;
+      @include media-breakpoint-up(sm) {
+        max-width: 50%;
+      }
+      @include media-breakpoint-up(xxl) {
+        max-width: 250px;
+      }
+    }
+  }
+}
